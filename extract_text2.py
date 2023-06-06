@@ -9,6 +9,7 @@ def extract_text_from_pages(pdf_path, start_page, end_page):
 
     # Set the parameters for analysis.
     laparams = LAParams(line_overlap=0.5, char_margin=4.0, line_margin=2.0, word_margin=0.1, boxes_flow=0.5)
+    ## to detect columns, changed char_margin=2.0 -> 4.0 and line_margin=0.5 -> 2.0
     
     # Create a PDF page aggregator object.
     device = PDFPageAggregator(rsrcmgr, laparams=laparams)
