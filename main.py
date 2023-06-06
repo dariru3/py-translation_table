@@ -10,16 +10,13 @@ def extract_text_from_pages(pdf_path, start_page, end_page):
                     yield element.get_text()
 
 # Specify the start and end pages
-start_page = 0
+start_page = 1
 end_page = 9
 
 # Extract text from the PDF
-text_generator = extract_text_from_pages('ir2022.pdf', start_page, end_page)
+text_generator = extract_text_from_pages('ir2022_JP.pdf', start_page, end_page)
 
 # Split the text into paragraphs and write to a CSV file
-with open('file.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
+with open('file.txt', 'w') as file:
     for text in text_generator:
-        paragraphs = text.split('\n\n')
-        for paragraph in paragraphs:
-            writer.writerow([paragraph])
+        file.write(text)
