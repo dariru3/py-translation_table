@@ -1,4 +1,3 @@
-import csv
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTTextBoxHorizontal
 
@@ -17,6 +16,6 @@ end_page = 9
 text_generator = extract_text_from_pages('ir2022_JP.pdf', start_page, end_page)
 
 # Split the text into paragraphs and write to a CSV file
-with open('file.txt', 'w') as file:
+with open('export.txt', 'w') as file:
     for text in text_generator:
         file.write(text)
