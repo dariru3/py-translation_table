@@ -24,8 +24,8 @@ def extract_text_from_pages(pdf_path, start_page, end_page):
                     yield element.get_text()
 
 # Specify the start and end pages
-start_page = 6
-end_page = 7
+start_page = 1
+end_page = 6
 
 # Extract text from the PDF
 text_generator = extract_text_from_pages('ir2022_JP.pdf', start_page, end_page)
