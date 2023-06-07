@@ -29,7 +29,7 @@ start_page = 1
 end_page = 6
 
 # Extract text from the PDF
-text_generator = extract_text_from_pages('ir2022_JP.pdf', start_page, end_page)
+text_generator = extract_text_from_pages('report_JP.pdf', start_page, end_page)
 
 # Write the text to a .txt file
 with open('export.txt', 'w') as file:
