@@ -1,4 +1,4 @@
-Sub FormatText()
+Sub MultiFindAndReplace()
     Selection.WholeStory
     Selection.Find.ClearFormatting
     Selection.Find.Replacement.ClearFormatting
