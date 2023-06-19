@@ -2,3 +2,4 @@ venv/
 *.pdf
 *.csv
 *.txt
+test_files/
