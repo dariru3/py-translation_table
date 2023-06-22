@@ -12,7 +12,7 @@ function copyTextFromDocToSheet() {
   // Replace characters
   text = text.replace(/[\r\n]+/g, ''); // replace newline characters with nothing
   text = text.replace(/。/g, '。\n'); // replace '。' with '。' and a newline
-  text = text.replace(/@/g, '\n');
+  text = text.replace(/▼/g, '\n');
   
   // Split the text into an array of lines
   const lines = text.split('\n');
