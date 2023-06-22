@@ -12,10 +12,13 @@ function copyTextFromDocToSheet() {
   // Replace characters
   text = text.replace(/[\r\n]+/g, ''); // replace newline characters with nothing
   text = text.replace(/。/g, '。\n'); // replace '。' with '。' and a newline
+  text = text.replace(/@/g, '\n');
   
   // Split the text into an array of lines
   const lines = text.split('\n');
+  console.log(lines)
   
+  /*
   // Access the sheet
   const sheet = SpreadsheetApp.openById(sheetId).getSheets()[0]; // get the first sheet
   
@@ -27,4 +30,5 @@ function copyTextFromDocToSheet() {
     let line = lines[i].trim();
     sheet.getRange(lastRow + i + 1, 1).setValue(line);
   }
+  */
 }
