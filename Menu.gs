@@ -3,6 +3,9 @@ function onOpen(e) {
   // Create a new menu
   const ui = DocumentApp.getUi();
   ui.createMenu('Translation Table Menu')
-    .addItem('Format Text to Sheet', 'copyTextFromDocToSheet')
+    .addItem('Sentence format to Sheet (○/▼)', 'copyTextFromDocToSheet')
+    .addItem('Free format to Sheet (▼)', 'copyTextFromDocToSheet')
+    .addSubMenu(ui.createMenu('Set up')
+      .addItem('Create target Sheet', 'createSheet'))
     .addToUi();
 }
