@@ -1,10 +1,9 @@
 function copyTextFromDocToSheet() {
   // ID of the Google Doc and Google Sheet
-  const docId = fileIds.docId;
   const sheetId = fileIds.sheetId;
   
   // Access the body of the document
-  const body = DocumentApp.openById(docId).getBody();
+  const body = DocumentApp.getActiveDocument().getBody();
   
   // Get all text from the document
   let text = body.editAsText().getText();
@@ -12,9 +11,13 @@ function copyTextFromDocToSheet() {
   // Replace characters
   text = text.replace(/[\r\n]+/g, ''); // replace newline characters with nothing
   text = text.replace(/。/g, '。\n'); // replace '。' with '。' and a newline
+
+  // Manually add a marker (▼) to add a new line where there is no Japanese period (。)
+  text = text.replace(/▼/g, '\n');
   
   // Split the text into an array of lines
   const lines = text.split('\n');
+  console.log(lines)
   
   // Access the sheet
   const sheet = SpreadsheetApp.openById(sheetId).getSheets()[0]; // get the first sheet
