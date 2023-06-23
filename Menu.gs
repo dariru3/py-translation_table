@@ -3,9 +3,10 @@ function onOpen(e) {
   // Create a new menu
   const ui = DocumentApp.getUi();
   ui.createMenu('Translation Table Menu')
-    .addItem('Sentence format to Sheet (○/▼)', 'copyTextFromDocToSheet')
-    .addItem('Free format to Sheet (▼)', 'copyTextFromDocToSheet')
+    .addItem('Translation Memory (○/▼)', 'textForTranslationMemory')
+    .addItem('対訳表 (▼)', 'textForTranslationTable')
+    .addSeparator()
     .addSubMenu(ui.createMenu('Set up')
-      .addItem('Create target Sheet', 'createSheet'))
+      .addItem('Create target Sheet', 'createNewSheet'))
     .addToUi();
 }
