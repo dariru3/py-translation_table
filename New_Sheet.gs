@@ -25,9 +25,8 @@ function createNewSheet() {
 }
 
 function showAlertWithLink(url) {
-  var htmlOutput = HtmlService.createHtmlOutput('<p style="font-family: Arial, sans-serif; text-align: left;">Text from this file will be sent here: <a href="' + url + '" target="_blank" style="color: #4285F4; text-decoration: none;">Open Sheet</a></p>')
+  var htmlOutput = HtmlService.createHtmlOutput('<p style="font-family: Arial, sans-serif; text-align: left;">Text from this file will be sent here:<br><br><a href="' + url + '" target="_blank" style="color: #4285F4; text-decoration: none;">Open Sheet</a></p><br><button onclick="google.script.host.close()" style="font-family: Arial, sans-serif; background-color: #4285F4; color: white; border: none; padding: 10px 20px; cursor: pointer;">OK</button>')
       .setWidth(300)
-      .setHeight(120);
+      .setHeight(150);
   DocumentApp.getUi().showModalDialog(htmlOutput, 'New Sheet Created');
 }
-
