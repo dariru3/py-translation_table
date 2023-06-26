@@ -50,7 +50,7 @@ Sub FormatAndCopyText()
 
 End Sub
 
-Sub FormatAndCopyText()
+Sub FormatAndCopyText2()
 
     Dim WordApp As Word.Application
     Dim WordDoc As Word.Document
