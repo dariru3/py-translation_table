@@ -3,10 +3,6 @@ function onOpen(e) {
   // Create a new menu
   const ui = DocumentApp.getUi();
   ui.createMenu('Translation Table Menu')
-    .addItem('Translation Memory (○/▼)', 'textForTranslationMemory')
-    .addItem('対訳表 (▼)', 'textForTranslationTable')
-    .addSeparator()
-    .addSubMenu(ui.createMenu('Set up')
-      .addItem('Create target Sheet', 'createNewSheet'))
+    .addItem('Format Text to Sheet', 'copyTextFromDocToSheet')
     .addToUi();
 }
