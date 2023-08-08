@@ -8,3 +8,9 @@ function deleteKey() {
     console.log('Failed with error %s', err.message);
   }
 }
+
+function getKey() {
+  const docProperties = PropertiesService.getDocumentProperties();
+  const sheetId = docProperties.getProperty("sheetId");
+  console.log(sheetId)
+}
