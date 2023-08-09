@@ -7,6 +7,7 @@ function onOpen(e) {
     .addItem('対訳表 (▼)', 'textForTranslationTable')
     .addSeparator()
     .addSubMenu(ui.createMenu('Set up')
-      .addItem('Create target Sheet', 'createNewSheet'))
+      .addItem('Create connected Sheet', 'createNewSheet')
+      .addItem('Get connected Sheet URL', 'getKey'))
     .addToUi();
 }
