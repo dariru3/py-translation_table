@@ -8,10 +8,7 @@ function textForTranslationTable() {
 
 function copyTextFromDocToSheet_(formatType='translation table') {
   // ID of the linked Google Sheet
-  const sheetId = PropertiesService.getDocumentProperties().getProperty('sheetId');
-  if (!sheetId) {
-    throw new Error('接続されたシートが設定されていません。セットアップ > 接続されたシートを作成を実行してください。');
-  }
+  const sheetId = checkSheetId_();
   
   // Access the body of the document
   const body = DocumentApp.getActiveDocument().getBody();

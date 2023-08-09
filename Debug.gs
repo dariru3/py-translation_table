@@ -17,10 +17,16 @@ function accessSheetIdKey_(accessType="get") {
     return
   }
 
-  const sheetId = docProperties.getProperty('sheetId');
-  if(!sheetId) {
-    throw new Error('接続されたシートが設定されていません。セットアップ > 接続されたシートを作成を実行してください。');
-  }
+  const sheetId = checkSheetId_();
   const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}`;
   showAlertWithLink(sheetUrl);
+}
+
+function checkSheetId_() {
+  const sheetId = PropertiesService.getDocumentProperties().getProperty('sheetId');
+  if(!sheetId) {
+    throw new Error('接続されたシートが設定されていません。セットアップ > 接続されたシートを作成を実行してください。')
+  } else {
+    return sheetId;
+  }
 }
