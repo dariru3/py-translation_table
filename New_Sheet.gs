@@ -17,11 +17,13 @@ function createNewSheet() {
   showAlertWithLink(newSheetUrl);
 
   // Add URL in document
+  /*
   const doc = DocumentApp.getActiveDocument();
   const body = doc.getBody();
   body.appendParagraph('\n\n' + 'New spreadsheet URL: ');
   const link = body.appendParagraph(newSheetUrl).setLinkUrl(newSheetUrl);
   link.merge();
+  */
 }
 
 function showAlertWithLink(url) {
