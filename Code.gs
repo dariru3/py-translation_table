@@ -10,7 +10,7 @@ function copyTextFromDocToSheet_(formatType='translation table') {
   // ID of the linked Google Sheet
   const sheetId = PropertiesService.getDocumentProperties().getProperty('sheetId');
   if (!sheetId) {
-    throw new Error('Target Sheet not set. Please run Set up > Create target Sheet');
+    throw new Error('接続されたシートが設定されていません。セットアップ > 接続されたシートを作成を実行してください。');
   }
   
   // Access the body of the document

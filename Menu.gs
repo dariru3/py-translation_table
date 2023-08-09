@@ -6,8 +6,8 @@ function onOpen(e) {
     .addItem('Translation Memory (○/▼)', 'textForTranslationMemory')
     .addItem('対訳表 (▼)', 'textForTranslationTable')
     .addSeparator()
-    .addSubMenu(ui.createMenu('Set up')
-      .addItem('Create connected Sheet', 'createNewSheet')
-      .addItem('Get connected Sheet URL', 'getKey'))
+    .addSubMenu(ui.createMenu('セットアップ')
+      .addItem('接続されたシートを作成を実行', 'createNewSheet')
+      .addItem('接続されたシートのURLを表す', 'getKey'))
     .addToUi();
 }
