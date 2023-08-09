@@ -3,9 +3,7 @@ function createNewSheet() {
   try {
     newSheet = SpreadsheetApp.create('Text Line Output');
   } catch(error) {
-    const ui = DocumentApp.getUi();
-    ui.alert('An error occurred creating a new Sheet: ' + error);
-    return
+    throw new Error('新しいシートを作成中にエラーが発生しました: ' + error);
   }
   
   // Get ID and URL of new spreadsheet, save in properties
@@ -15,15 +13,6 @@ function createNewSheet() {
 
   // Alert user of new spreadsheet URL
   showAlertWithLink(newSheetUrl);
-
-  // Add URL in document
-  /*
-  const doc = DocumentApp.getActiveDocument();
-  const body = doc.getBody();
-  body.appendParagraph('\n\n' + 'New spreadsheet URL: ');
-  const link = body.appendParagraph(newSheetUrl).setLinkUrl(newSheetUrl);
-  link.merge();
-  */
 }
 
 function showAlertWithLink(url) {
